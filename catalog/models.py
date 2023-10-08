@@ -8,7 +8,8 @@ class Animal(models.Model):
     def __str__(self):
         return self.name
 
-
+    def get_absolute_url(self): # Получает URL страницы объекта
+        return reverse('animal-detail',args=[self.id, self.name])
 
 class Client(models.Model):
     first_name = models.CharField(max_length=50,verbose_name='Имя')
@@ -16,8 +17,6 @@ class Client(models.Model):
 
     def __str__(self):
         return f'{self.last_name}, {self.first_name}'
-
-
 
 
 class Veterinarian(models.Model):
@@ -41,5 +40,4 @@ class Appointment(models.Model):
         return f'{self.client}'
 
     def get_absolute_url(self): # Получает URL страницы объекта
-        return reverse('animal-detail',args=[self.id, self.animal])
-        #return f'kino/{self.id}/{self.title}
+        return reverse('animal-detail',args=[self.id, self.client])

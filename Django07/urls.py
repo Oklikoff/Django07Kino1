@@ -22,6 +22,6 @@ urlpatterns = [
     path('',views.index, name='home'),
     path('animals/', views.AnimalListView.as_view(), name='animal-list'),
     # path('kino/<int:id>/',views.info, name='info'),
-    path('animals/<slug:pk>/<str:title>', views.AnimalDetailView.as_view(), name='animal-detail'),
+    path('animals/<slug:pk>/<str:name>', views.AnimalDetailView.as_view(), name='animal-detail'),
 
 ]

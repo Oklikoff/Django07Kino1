@@ -15,8 +15,9 @@ class AnimalListView(generic.ListView):
     template_name = 'catalogs/animal_list.html'
 
 class AnimalDetailView(generic.DetailView):
-    model = Appointment
+    model = Animal
     template_name = 'catalogs/animal_detail.html'
+
 
 
 # from django.http import HttpResponse
